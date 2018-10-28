@@ -1,9 +1,10 @@
 const multiplicationTable = function(number,limit){
-  let value = number;
-  if(limit > 0){
-    return multiplicationTable(limit-1)+value;
+  let result = number;
+  if(limit == 0){
+    return 0;
   }
-    console.log(value);
-  return value;
+  result = multiplicationTable(number,limit-1)+result;
+  console.log(result);
+  return result;
 }
-console.log(multiplicationTable(+process.argv[2],+process.argv[3]));
+multiplicationTable(+process.argv[2],+process.argv[3]);
